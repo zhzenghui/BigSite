@@ -1,5 +1,8 @@
 BigSite::Application.routes.draw do
   
+  devise_for :admins, :users, :models
+  
+  
   root 'static_pages#index'
   
   get "static_pages/home"

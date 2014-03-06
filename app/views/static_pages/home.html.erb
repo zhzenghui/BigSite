@@ -2,7 +2,28 @@
 
 <h1>Home</h1>
 <p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
+	
+  <% if user_signed_in? -%>
+    <div id="user_login_box" style="float:right">
+      <%= current_user.email %> |
+      <%= link_to 'My info', edit_user_registration_path %> |
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    </div>
+  <% elsif -%>
+	  This is the home page for the
+	  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+	  sample application.
+		
+		
+		<% unless user_signed_in? -%>
+		  <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
+		  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
+		<% end -%>
+		
+		
+		<% if user_signed_in? -%>
+		  <p><%= link_to 'Token Authentication Example', token_path(auth_token: current_user.authentication_token) %></p>
+		<% end -%>
+  <% end -%>
+  
 </p>
