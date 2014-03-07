@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+
+<p>
+  <strong>Sku number:</strong>
+  <%= @app.sku_number %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @app.language %>
+</p>
+
+<p>
+  <strong>Version number:</strong>
+  <%= @app.version_number %>
+</p>
+
+<p>
+  <strong>Copyright:</strong>
+  <%= @app.copyright %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @app.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @app.description %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @app.keywords %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @app.price %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @app.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @app.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

@@ -1,5 +1,7 @@
 BigSite::Application.routes.draw do
   
+  resources :apps
+
   devise_for :admins, :users, :models
   
   
@@ -9,6 +11,9 @@ BigSite::Application.routes.draw do
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/index"
+  
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

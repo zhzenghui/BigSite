@@ -1,4 +1,24 @@
-<% provide(:title, 'Index') %>
+<% provide(:title, @user.user_name+ "所有产品" ) %>
 
 <h1>Index</h1>
-<p>Find me in app/views/static_pages/help.html.erb</p>
+
+
+
+<h1><%= @user.user_name + "的所有产品" %></h1>
+
+
+<ul class="apps">
+	
+	
+  <% @apps.each do |app| %>
+
+		<li>
+       <%= link_to app.name, app %> 
+	
+
+		</li>
+    <% end %>
+
+
+    <%= will_paginate @apps %>
+</ul>

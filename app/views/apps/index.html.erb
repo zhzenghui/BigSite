@@ -1,0 +1,47 @@
+<h1>Listing apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sku number</th>
+      <th>Language</th>
+      <th>Version number</th>
+      <th>Copyright</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Keywords</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.name %></td>
+        <td><%= app.sku_number %></td>
+        <td><%= app.language %></td>
+        <td><%= app.version_number %></td>
+        <td><%= app.copyright %></td>
+        <td><%= app.category %></td>
+        <td><%= app.description %></td>
+        <td><%= app.keywords %></td>
+        <td><%= app.price %></td>
+        <td><%= app.status %></td>
+        <td><%= app.user_id %></td>
+        <td><%= link_to 'Show', app %></td>
+        <td><%= link_to 'Edit', edit_app_path(app) %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New App', new_app_path %>
